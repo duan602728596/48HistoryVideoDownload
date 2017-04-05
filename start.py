@@ -81,13 +81,13 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def download(self):
         # 获取品质
         try:
-            self.pinzhi = unicode(self.Pinzhi.currentItem().text(0))
+            self.pinzhi = self.Pinzhi.currentItem().text(0)
         except:
             self.pinzhi = u'超清'
 
         # 获取要下载的项目
         try:
-            id = unicode(self.Result.currentItem().text())
+            id = self.Result.currentItem().text()
         except:
             id = None
             warning(u'请选择一个项目进行下载！')
