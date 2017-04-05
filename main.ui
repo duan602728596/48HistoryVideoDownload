@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>851</width>
+    <width>912</width>
     <height>654</height>
    </rect>
   </property>
@@ -95,7 +95,7 @@
      <rect>
       <x>160</x>
       <y>10</y>
-      <width>681</width>
+      <width>741</width>
       <height>451</height>
      </rect>
     </property>
@@ -108,7 +108,7 @@
    <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>680</x>
+      <x>740</x>
       <y>470</y>
       <width>160</width>
       <height>51</height>
@@ -133,7 +133,7 @@
    <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>490</x>
       <y>470</y>
       <width>160</width>
       <height>51</height>
@@ -221,7 +221,7 @@
      <rect>
       <x>10</x>
       <y>530</y>
-      <width>831</width>
+      <width>891</width>
       <height>61</height>
      </rect>
     </property>
@@ -238,7 +238,7 @@
    <widget class="QWidget" name="verticalLayoutWidget_9">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>660</x>
       <y>470</y>
       <width>71</width>
       <height>51</height>
@@ -285,7 +285,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>851</width>
+     <width>912</width>
      <height>26</height>
     </rect>
    </property>
@@ -310,7 +310,9 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="main.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>FileExit</sender>
