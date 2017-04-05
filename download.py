@@ -17,19 +17,25 @@ def cn2en(txt):
 
 # 对地址进行解析
 # invedio: m3u8地址
-def getTsUrl(invedio):
-    # 网址正则
-    patternOld = re.compile(r'http:\/\/ts\.snh48\.com\/\d+\/[a-z]+\/', re.I) # 旧网址，兼容以前
-    patternNew = re.compile(r'http:\/\/ts\.snh48\.com\/[^\d]+\/', re.I)       # 新网址，正在使用
-    patternHost = re.compile(r'http:\/\/ts\.snh48\.com.{0}', re.I)             # Host
+PATTERN_TSURL = re.compile(r'^http(s)?\:\/\/.+$', re.I)                     # 判断是否是以http(s)开头的地址
+PATTERN_OLD = re.compile(r'http:\/\/ts\.snh48\.com\/\d+\/[a-z]+\/', re.I) # 正则旧地址
+PATTERN_NEW = re.compile(r'http:\/\/ts\.snh48\.com\/[^\d]+\/', re.I)      # 正则新地址
+PATTERN_HOST = re.compile(r'http:\/\/ts\.snh48\.com.{0}', re.I)            # 正则新地址获取host
 
-    r = patternNew.findall(invedio)
-    if len(r) == 0:
-        r = patternOld.findall(invedio)
-    else:
-        r = patternHost.findall(invedio)
+def getTsUrl(invedio, tsUrl):
+    t = re.match(PATTERN_TSURL, tsUrl)
+    r = ''
 
-    return r[0]
+    if t == None:
+        r = PATTERN_NEW.findall(invedio)
+        if len(r) == 0:
+            s = PATTERN_OLD.findall(invedio)
+            r = s[0]
+        else:
+            s = PATTERN_HOST.findall(invedio)
+            r = s[0]
+
+    return r
 
 
 # 下载所有的ts文件
@@ -46,7 +52,7 @@ def download(Qt_Infor, invedio, getInvedio, tsUrl, address, id, pinzhi):
     file = open('ts/' + fl, 'ab')
 
     # 获取ts的文件列表
-    ts = getTsUrl(getInvedio)
+    ts = getTsUrl(getInvedio, tsUrl[0])
 
     #请求头
     headers = {
