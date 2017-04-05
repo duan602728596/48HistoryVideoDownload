@@ -1,5 +1,6 @@
 # coding=utf8
 import sys
+import os
 from PyQt4 import uic, QtCore, QtGui
 from getAddress import getAddress        # 请求地址
 from addResultItem import addResultItem  # 地址添加到结果列表
@@ -8,7 +9,7 @@ from goToDownload import goToDownload    # 下载
 
 
 # ui地址
-Ui_MainWindow, QtBaseClass = uic.loadUiType('./main.ui')
+Ui_MainWindow, QtBaseClass = uic.loadUiType(os.getcwd() + '\\main.ui')
 
 
 # 定义函数类
@@ -18,6 +19,9 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+
+        # 设置图标
+        self.setWindowIcon(QtGui.QIcon(os.getcwd() + '\\icon2.ico'))
 
         # 参数
         self.page = 1           # 当前页数

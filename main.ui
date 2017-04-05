@@ -19,10 +19,6 @@
   <property name="windowTitle">
    <string>测试版(v0.0.2)</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>icon2.ico</normaloff>icon2.ico</iconset>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
@@ -310,9 +306,6 @@
    </property>
   </action>
  </widget>
- <resources>
-  <include location="main.qrc"/>
- </resources>
  <connections>
   <connection>
    <sender>FileExit</sender>
