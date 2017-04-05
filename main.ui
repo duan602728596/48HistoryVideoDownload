@@ -17,11 +17,11 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>测试版(v0.0.1)</string>
+   <string>测试版(v0.0.2)</string>
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>icon.jpg</normaloff>icon.jpg</iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
