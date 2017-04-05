@@ -1,6 +1,6 @@
 # coding=utf8
 # 请求地址
-import urllib2
+import urllib
 import re
 from pyquery import PyQuery
 
@@ -27,9 +27,9 @@ def getAddress(address, page):
     # 获取数据
     try:
         url = 'http://live.' + address + '.com/Index/index/p/' + str(page) + '.html'
-        request = urllib2.Request(str(url))
-        response = urllib2.urlopen(request)
-        read = response.read()
+        request = urllib.request.Request(str(url))
+        response = urllib.request.urlopen(request)
+        read = response.read().decode()
     except:
         read = None
 

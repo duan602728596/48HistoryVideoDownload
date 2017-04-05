@@ -1,8 +1,8 @@
 # coding=utf8
 # 警告框
-from PyQt4 import QtGui
+from PyQt5 import QtWidgets
 
 def warning(text):
-    qtm = QtGui.QMessageBox
+    qtm = QtWidgets.QMessageBox
     msg = qtm(qtm.Warning, u'警告', text)
     msg.exec_()

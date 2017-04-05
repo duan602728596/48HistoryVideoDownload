@@ -1,7 +1,7 @@
 # coding=utf8
 import sys
 import os
-from PyQt4 import uic, QtCore, QtGui
+from PyQt5 import uic, QtCore, QtGui, QtWidgets
 from getAddress import getAddress        # 请求地址
 from addResultItem import addResultItem  # 地址添加到结果列表
 from warning import warning              # 警告
@@ -13,10 +13,10 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType(os.getcwd() + '\\main.ui')
 
 
 # 定义函数类
-class MyApp(QtGui.QMainWindow, Ui_MainWindow):
+class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         # Qt初始化
-        QtGui.QMainWindow.__init__(self)
+        QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
 
@@ -103,7 +103,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
 # 初始化程序
 if __name__ == "__main__":
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
