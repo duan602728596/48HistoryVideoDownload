@@ -9,3 +9,6 @@ start.py为项目入口。
 * pyqt5：ui
 * pyquery：数据处理
 * lxml：pyquery的依赖
+
+---
+项目地址：[https://github.com/duan602728596/48HistoryVideoDownload](https://github.com/duan602728596/48HistoryVideoDownload)
