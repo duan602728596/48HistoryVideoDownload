@@ -45,7 +45,10 @@ def getTsUrl(invedio, tsUrl):
 # address: 星梦剧院地址
 # id: 视频id
 # pinzhi: 视频的质量
+stopDownLoad = False # 用于停止下载
+
 def download(Qt_Infor, invedio, getInvedio, tsUrl, address, id, pinzhi):
+
     # 文件io
     now = datetime.datetime.now()
     fl = address + '_' + id + '_' + cn2en(pinzhi) + '_' + now.strftime('%Y-%m-%d-%H-%M-%S') + '.ts' # 使用时间戳
@@ -54,7 +57,7 @@ def download(Qt_Infor, invedio, getInvedio, tsUrl, address, id, pinzhi):
     # 获取ts的文件列表
     ts = getTsUrl(getInvedio, tsUrl[0])
 
-    #请求头
+    # 请求头
     headers = {
         'Referer': invedio,
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36',
@@ -65,21 +68,30 @@ def download(Qt_Infor, invedio, getInvedio, tsUrl, address, id, pinzhi):
     i = 0
     length = len(tsUrl)
     while i < length:
-        # 二进制文件流
-        u = ts + tsUrl[i] + '.ts'
-        buffer = getTs(u, headers)
+        global stopDownLoad
+        if stopDownLoad == False:
+            # 二进制文件流
+            u = ts + tsUrl[i] + '.ts'
+            buffer = getTs(u, headers)
 
-        # 状态吗
-        code = None
-        if buffer != 404:
-            file.write(buffer)
-            code = '200'
+            # 状态吗
+            code = None
+            if buffer != 404:
+                file.write(buffer)
+                code = '200'
+            else:
+                code = '404'
+
+            # 更新进度条和信息
+            Qt_Infor.setText(u'写入文件：' + fl + '\n' +
+                             str(i + 1) + '/' + str(length) + ' ' + ts + tsUrl[i] + '.ts ' + code)
+            i += 1
+
+            # 判断是否完成
+            if i == length:
+                Qt_Infor.setText(u'下载成功：' + fl + '\n')
         else:
-            code = '404'
-
-        # 更新进度条和信息
-        Qt_Infor.setText(u'写入文件：' + fl + '\n' +
-                        str(i + 1) + '/' + str(length) + ' ' + ts + tsUrl[i] + '.ts ' + code)
-        i += 1
+            Qt_Infor.setText(u'下载停止：' + fl + '\n')
+            break
 
     file.close()
