@@ -91,6 +91,6 @@ def goToDownload(Qt_Infor, pinzhi, address, id):
     tsUrl = ts(m3u8)
 
     # 创建新线程下载
-    thread1 =  threading.Thread(target = download, args = (Qt_Infor, invedio, getInvedio, tsUrl, address, newId, pinzhi))
+    thread1 = threading.Thread(target = download, args = (Qt_Infor, invedio, getInvedio, tsUrl, address, newId, pinzhi))
     thread1.start()
     return thread1

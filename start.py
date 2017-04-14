@@ -6,6 +6,7 @@ from getAddress import getAddress        # 请求地址
 from addResultItem import addResultItem  # 地址添加到结果列表
 from warning import warning              # 警告
 from goToDownload import goToDownload    # 下载
+import download                          # 用于停止下载
 
 
 # ui地址
@@ -24,11 +25,11 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.setWindowIcon(QtGui.QIcon(os.getcwd() + '\\icon2.ico'))
 
         # 参数
-        self.page = 1           # 当前页数
-        self.address = 'snh48' # 地址
-        self.pinzhi = u'超清'   # 视频品质
-        self.list = []         # 当前列表
-        self.thread1 = None    # 线程
+        self.page = 1             # 当前页数
+        self.address = 'snh48'    # 地址
+        self.pinzhi = u'超清'     # 视频品质
+        self.list = []            # 当前列表
+        self.thread1 = None       # 线程
 
         # 链接函数
         self.initPage()
@@ -98,7 +99,7 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
     # 停止下载
     def stop(self):
-        warning(u'我太帅了，根本停不下来！')
+        download.stopDownLoad = True
 
 
 # 初始化程序
