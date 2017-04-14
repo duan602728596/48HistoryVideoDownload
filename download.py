@@ -48,7 +48,6 @@ def getTsUrl(invedio, tsUrl):
 stopDownLoad = False # 用于停止下载
 
 def download(Qt_Infor, invedio, getInvedio, tsUrl, address, id, pinzhi):
-
     # 文件io
     now = datetime.datetime.now()
     fl = address + '_' + id + '_' + cn2en(pinzhi) + '_' + now.strftime('%Y-%m-%d-%H-%M-%S') + '.ts' # 使用时间戳
@@ -74,7 +73,7 @@ def download(Qt_Infor, invedio, getInvedio, tsUrl, address, id, pinzhi):
             u = ts + tsUrl[i] + '.ts'
             buffer = getTs(u, headers)
 
-            # 状态吗
+            # 状态码
             code = None
             if buffer != 404:
                 file.write(buffer)
