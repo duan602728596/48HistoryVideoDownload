@@ -15,7 +15,7 @@ def get(url):
 # url：请求的地址
 # headers：请求头
 def getTs(url, headers):
-    request = urllib.request.Request(url, headers=headers)
+    request = urllib.request.Request(url, headers = headers)
     r = None
 
     try:
