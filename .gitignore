@@ -4,3 +4,5 @@ build
 *.pyc
 *.spec
 __pycache__
+*.exe
+licenses/*.txt

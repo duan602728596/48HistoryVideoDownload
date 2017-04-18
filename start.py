@@ -28,7 +28,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.address = 'snh48'    # 地址
         self.pinzhi = u'超清'     # 视频品质
         self.list = []            # 当前列表
-        self.thread1 = None       # 线程
 
         # 链接函数
         self.initPage()
@@ -36,7 +35,6 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Back_Btn.clicked.connect(self.backPage)     # 上一页按钮链接
         self.Next_Btn.clicked.connect(self.nextPage)     # 上一页按钮链接
         self.Download_Btn.clicked.connect(self.download) # 下载
-        self.Stop_Btn.clicked.connect(self.stop)         # 停止下载
 
     # 初始化页数
     def initPage(self):
@@ -95,11 +93,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # 下载
         if id != None:
             download.stopDownLoad = False
-            self.thread1 = goToDownload(self.Infor, self.pinzhi, self.address, id)
+            goToDownload(self.Infor, self.pinzhi, self.address, id)
 
-    # 停止下载
-    def stop(self):
-        download.stopDownLoad = True
 
 # 初始化程序
 if __name__ == "__main__":

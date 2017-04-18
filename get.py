@@ -1,26 +1,15 @@
 # coding=utf8
 # 进行get请求
 import urllib
+import warning
 
 
 # get请求
 # url: 请求的地址
 def get(url):
-    request = urllib.request.Request(url)
-    response = urllib.request.urlopen(request)
-    return response.read().decode()
-
-
-# ts请求
-# url: 请求的地址
-# headers: 请求头
-def getTs(url, headers):
-    request = urllib.request.Request(url, headers = headers)
-    # 对404进行处理
-    r = None
     try:
+        request = urllib.request.Request(url)
         response = urllib.request.urlopen(request)
-        r = response.read()
+        return response.read().decode()
     except:
-        r = 404
-    return r
+        warning(u'请稍后下载')
