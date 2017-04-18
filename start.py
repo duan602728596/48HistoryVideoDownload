@@ -6,7 +6,7 @@ from getAddress import getAddress        # 请求地址
 from addResultItem import addResultItem  # 地址添加到结果列表
 from warning import warning              # 警告
 from goToDownload import goToDownload    # 下载
-import download                          # 用于停止下载
+
 
 # ui地址
 Ui_MainWindow, QtBaseClass = uic.loadUiType(os.getcwd() + '\\main.ui')
