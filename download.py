@@ -18,9 +18,9 @@ def cn2en(txt):
 # 对地址进行解析
 # invedio: m3u8地址
 PATTERN_TSURL = re.compile(r'^http(s)?\:\/\/.+$', re.I)                     # 判断是否是以http(s)开头的地址
-PATTERN_OLD = re.compile(r'http:\/\/ts\.snh48\.com\/\d+\/[a-z]+\/', re.I) # 正则旧地址
-PATTERN_NEW = re.compile(r'http:\/\/ts\.snh48\.com\/[^\d]+\/', re.I)      # 正则新地址
-PATTERN_HOST = re.compile(r'http:\/\/ts\.snh48\.com.{0}', re.I)            # 正则新地址获取host
+PATTERN_OLD = re.compile(r'http:\/\/ts\.snh48\.com\/\d+\/[a-z]+\/', re.I)   # 正则旧地址
+PATTERN_NEW = re.compile(r'http:\/\/ts\.snh48\.com\/[^\d]+\/', re.I)        # 正则新地址
+PATTERN_HOST = re.compile(r'http:\/\/ts\.snh48\.com.{0}', re.I)             # 正则新地址获取host
 
 def getTsUrl(invedio, tsUrl):
     t = re.match(PATTERN_TSURL, tsUrl)
