@@ -6,11 +6,11 @@ import win32api
 
 # 中文转英文
 def cn2en(txt):
-    if txt == u'超清':
+    if txt == '超清':
         return 'chaoqing'
-    elif txt == u'高清':
+    elif txt == '高清':
         return 'gaoqing'
-    elif txt == u'流畅':
+    elif txt == '流畅':
         return 'liuchang'
 
 # 调用ffmpeg.exe

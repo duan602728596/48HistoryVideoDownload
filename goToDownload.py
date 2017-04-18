@@ -16,7 +16,7 @@ def getId(id):
     i = 0
     j = len(s)
     while i < j:
-        if s[i] != u'':
+        if s[i] != '':
             r = s[i]
             break
         else:
@@ -55,13 +55,13 @@ def liuChangUrl(txt):
 def pinZhi(pinzhi, txt):
     pz = pinzhi
     # 超清
-    if pz == u'超清':
+    if pz == '超清':
         return chaoQingUrl(txt)
     # 高清
-    elif pz == u'高清':
+    elif pz == '高清':
         return gaoQingUrl(txt)
     # 流畅
-    elif pz == u'流畅':
+    elif pz == '流畅':
         return liuChangUrl(txt)
 
 

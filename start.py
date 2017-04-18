@@ -26,7 +26,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # 参数
         self.page = 1             # 当前页数
         self.address = 'snh48'    # 地址
-        self.pinzhi = u'超清'     # 视频品质
+        self.pinzhi = '超清'     # 视频品质
         self.list = []            # 当前列表
 
         # 链接函数
@@ -38,7 +38,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     # 初始化页数
     def initPage(self):
-        self.Page_Label.setText(u'第' + str(self.page) + u'页')
+        self.Page_Label.setText('第' + str(self.page) + u'页')
 
     # 刷新
     def refresh(self):
@@ -62,7 +62,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.initPage()
             addResultItem(self.Result, self.list)
         else:
-            warning(u'已经是第一页了')
+            warning('已经是第一页了')
 
     # 下一页
     def nextPage(self):
@@ -73,7 +73,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.initPage()
             addResultItem(self.Result, self.list)
         else:
-            warning(u'已经是最后一页了')
+            warning('已经是最后一页了')
 
     # 下载
     def download(self):
@@ -81,19 +81,18 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         try:
             self.pinzhi = self.Pinzhi.currentItem().text(0)
         except:
-            self.pinzhi = u'超清'
+            self.pinzhi = '超清'
 
         # 获取要下载的项目
         try:
-            id = self.Result.currentItem().text()
+            title = self.Result.currentItem().text()
         except:
-            id = None
-            warning(u'请选择一个项目进行下载！')
+            title = None
+            warning('请选择一个项目进行下载！')
 
         # 下载
-        if id != None:
-            download.stopDownLoad = False
-            goToDownload(self.Infor, self.pinzhi, self.address, id)
+        if title != None:
+            goToDownload(self.Infor, self.pinzhi, self.address, title)
 
 
 # 初始化程序
