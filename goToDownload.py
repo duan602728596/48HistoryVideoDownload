@@ -66,31 +66,16 @@ def pinZhi(pinzhi, txt):
 
 
 # ----------------------------------------------------------------------
-# 对m3u8进行处理，获取所有的ts地址
-# m3u8: m3u8文件内容
-def ts(m3u8):
-    # 正则匹配.ts地址
-    pattern = re.compile(r'\n([^\#\,\n]*)\.ts', re.I)
-    r = pattern.findall(m3u8)
-    # 返回.ts地址的数组
-    return r
-
-
-# ----------------------------------------------------------------------
 # 下载
-def goToDownload(Qt_Infor, pinzhi, address, id):
-    newId = getId(id)
+def goToDownload(Qt_Infor, pinzhi, address, title):
+    id = getId(title)
     # 获取页面
-    invedio = str('http://live.' + address + '.com/Index/invedio/id/' + newId)
+    invedio = str('http://live.' + address + '.com/Index/invedio/id/' + id)
     getInvedio = get(invedio)
 
     # 根据页面获取m3u8文件
-    m3u8 = get(pinZhi(pinzhi, getInvedio))
-
-    # 返回ts的地址
-    tsUrl = ts(m3u8)
+    m3u8 = pinZhi(pinzhi, getInvedio)
 
     # 创建新线程下载
-    thread1 = threading.Thread(target = download, args = (Qt_Infor, invedio, getInvedio, tsUrl, address, newId, pinzhi))
+    thread1 = threading.Thread(target = download, args = (Qt_Infor, m3u8, address, id, pinzhi, title))
     thread1.start()
-    return thread1

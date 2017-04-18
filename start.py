@@ -6,7 +6,6 @@ from getAddress import getAddress        # 请求地址
 from addResultItem import addResultItem  # 地址添加到结果列表
 from warning import warning              # 警告
 from goToDownload import goToDownload    # 下载
-import download                          # 用于停止下载
 
 
 # ui地址
@@ -29,7 +28,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.address = 'snh48'    # 地址
         self.pinzhi = u'超清'     # 视频品质
         self.list = []            # 当前列表
-        self.thread1 = None       # 线程
 
         # 链接函数
         self.initPage()
@@ -37,7 +35,6 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         self.Back_Btn.clicked.connect(self.backPage)     # 上一页按钮链接
         self.Next_Btn.clicked.connect(self.nextPage)     # 上一页按钮链接
         self.Download_Btn.clicked.connect(self.download) # 下载
-        self.Stop_Btn.clicked.connect(self.stop)         # 停止下载
 
     # 初始化页数
     def initPage(self):
@@ -88,18 +85,14 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
 
         # 获取要下载的项目
         try:
-            id = unicode(self.Result.currentItem().text())
+            title = unicode(self.Result.currentItem().text())
         except:
-            id = None
+            title = None
             warning(u'请选择一个项目进行下载！')
 
         # 下载
-        if id != None:
-            self.thread1 = goToDownload(self.Infor, self.pinzhi, self.address, id)
-
-    # 停止下载
-    def stop(self):
-        download.stopDownLoad = True
+        if title != None:
+            goToDownload(self.Infor, self.pinzhi, self.address, title)
 
 
 # 初始化程序

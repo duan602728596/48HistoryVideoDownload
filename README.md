@@ -12,4 +12,9 @@ start.py为项目入口。
 
 ---
 
+### 视频处理
+视频处理使用了ffmpeg，请自行下载并放入目录中。
+
+---
+
 项目地址：[https://github.com/duan602728596/48HistoryVideoDownload](https://github.com/duan602728596/48HistoryVideoDownload)
