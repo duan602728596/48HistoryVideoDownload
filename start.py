@@ -6,6 +6,7 @@ from getAddress import getAddress        # 请求地址
 from addResultItem import addResultItem  # 地址添加到结果列表
 from warning import warning              # 警告
 from goToDownload import goToDownload    # 下载
+import download                          # 停止下载
 
 
 # ui地址
@@ -35,6 +36,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.Back_Btn.clicked.connect(self.backPage)     # 上一页按钮链接
         self.Next_Btn.clicked.connect(self.nextPage)     # 上一页按钮链接
         self.Download_Btn.clicked.connect(self.download) # 下载
+        self.Stop_Btn.clicked.connect(self.stop)         # 停止下载
 
     # 初始化页数
     def initPage(self):
@@ -92,7 +94,12 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         # 下载
         if title != None:
+            download.stopDownload = False
             goToDownload(self.Infor, self.pinzhi, self.address, title)
+
+    # 停止下载
+    def stop(self):
+        download.stopDownload = True
 
 
 # 初始化程序
