@@ -24,10 +24,10 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     self.setWindowIcon(QtGui.QIcon(os.getcwd() + '\\icon2.ico'))
     
     # 参数
-    self.page = 1  # 当前页数
+    self.page = 1           # 当前页数
     self.address = 'snh48'  # 地址
-    self.pinzhi = '超清'  # 视频品质
-    self.list = []  # 当前列表
+    self.pinzhi = '超清'    # 视频品质
+    self.list = []          # 当前列表
     
     # 链接函数
     self.initPage()
