@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>665</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>48G公演直播录源、录播下载</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>54</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>地址</string>
+    </property>
+   </widget>
+   <widget class="QTreeWidget" name="address">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>111</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>地址</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>SNH48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>BEJ48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>GNZ48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SHY48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>CKG48</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>40</y>
+      <width>54</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>品质</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>40</y>
+      <width>54</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>列表</string>
+    </property>
+   </widget>
+   <widget class="QTreeWidget" name="quality">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>70</y>
+      <width>111</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>品质</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>超清</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>高清</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>流畅</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QListWidget" name="videoList">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>70</y>
+      <width>541</width>
+      <height>251</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="page">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>330</y>
+      <width>291</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>暂无数据</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="prev_btn">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>330</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>上一页</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="next_btn">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>330</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>下一页</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="download">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>330</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>下载</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>370</y>
+      <width>781</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="refresh">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>330</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>刷新</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>录播下载</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>390</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>直播录源</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>420</y>
+      <width>54</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>地址</string>
+    </property>
+   </widget>
+   <widget class="QTreeWidget" name="address_inLive">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>450</y>
+      <width>111</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>地址</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>SNH48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>BEJ48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>GNZ48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SHY48</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>CKG48</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>420</y>
+      <width>54</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>品质</string>
+    </property>
+   </widget>
+   <widget class="QTreeWidget" name="quality_inLive">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>450</y>
+      <width>111</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>品质</string>
+     </property>
+    </column>
+    <item>
+     <property name="text">
+      <string>超清</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>高清</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>流畅</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="recording">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>450</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>开始录制</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="infor_inLive">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>490</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>address</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>quality</zorder>
+   <zorder>videoList</zorder>
+   <zorder>page</zorder>
+   <zorder>prev_btn</zorder>
+   <zorder>next_btn</zorder>
+   <zorder>download</zorder>
+   <zorder>line</zorder>
+   <zorder>refresh</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>address_inLive</zorder>
+   <zorder>label_7</zorder>
+   <zorder>quality_inLive</zorder>
+   <zorder>recording</zorder>
+   <zorder>infor_inLive</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

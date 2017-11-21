@@ -1,0 +1,17 @@
+# dependent
+dependent/ffmpeg/ffmpeg.exe
+dependent/ffmpeg/licenses
+
+# output
+output/*.flv
+output/*.mp4
+output/*.m3u8
+
+# pycharm
+.idea
+
+# python
+__pycache__
+build
+dist
+*.spec
