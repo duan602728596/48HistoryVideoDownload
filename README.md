@@ -17,7 +17,7 @@
 * pyinstaller用来打包编译
 
 ## 编译方法
-1、运行`pyinstaller 48Live.py -w`
+1、运行`pyinstaller 48Live.py -w`   
 2、将dependent、output、ui等文件夹拷贝到编译后的dist文件夹内
 
 ## 源代码地址
