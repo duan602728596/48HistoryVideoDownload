@@ -10,7 +10,7 @@ LAYOUT =  CWD + '\\ui\\window.ui'
 ICON = CWD + '\\ui\\icon.ico'
 
 # ffmpeg.exe文件地址
-FFMPEG = CWD + '\\dependent\\ffmpeg\\ffmpeg.exe'
+FFMPEG = CWD + '\\dependent\\ffmpeg\\ffmpeg'
 
 # 文件输出目录
 OUTPUT = CWD + '\\output\\'
