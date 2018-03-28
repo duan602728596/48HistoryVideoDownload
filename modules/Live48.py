@@ -7,9 +7,6 @@ import urllib.request
 from pyquery import PyQuery
 
 class Live48:
-  def __init__(self):
-    pass
-
   # 解析视频地址
   def getVideoValue(self, html, quality):
     page = PyQuery(html)

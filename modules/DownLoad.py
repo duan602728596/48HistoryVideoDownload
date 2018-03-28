@@ -20,6 +20,14 @@ class DownLoad(Live48):
     self.IS_HTTP = re.compile(r'^ht{2}ps?', re.I)             # 是否是http或https
     self.IS_SLASH = re.compile(r'^\/.+$', re.I)               # 是否以斜杠开头
     self.M3U8_FILE_NAME = re.compile(r'[^/]+\.m3u8.*')        # 提取文件名
+    # 直播地址
+    self.URL = {
+      'SNH48': 'http://zhibo.ckg48.com/',
+      'BEJ48': 'http://live.bej48.com/',
+      'GNZ48': 'http://live.gnz48.com/',
+      'SHY48': 'http://live.shy48.com/',
+      'CKG48': 'http://live.ckg48.com/',
+    }
   
   # 获取地址中的id
   def find(self, reResult):
@@ -38,7 +46,7 @@ class DownLoad(Live48):
   def getAddress(self, address, value_page, callback):
     # 请求数据
     pageStr = str(value_page)
-    url = 'http://live.' + address + '.com/Index/index/p/' + pageStr + '.html'
+    url = self.URL[address] + 'Index/index/p/' + pageStr + '.html'
     read = self.get(url)
 
     # 对数据进行查询并添加到列表里
@@ -64,7 +72,7 @@ class DownLoad(Live48):
   # 下载
   def downloadVideo(self, address, quality, id): # 地址，品质，id
     # 请求页面
-    url = 'http://live.' + address + '.com/Index/invedio/id/' + id
+    url = self.URL[address] + 'Index/invedio/id/' + id
     result = self.get(url.lower())
     # 返回m3u8地址
     m3u8 = self.getVideoValue(result, quality)

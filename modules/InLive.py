@@ -11,11 +11,19 @@ from modules.config import FFMPEG, OUTPUT
 class InLive(Live48):
   def __init__(self):
     super()
-
+    # 直播地址
+    self.URL = {
+      'SNH48': 'http://zhibo.ckg48.com/',
+      'BEJ48': 'http://live.bej48.com/',
+      'GNZ48': 'http://live.gnz48.com/',
+      'SHY48': 'http://live.shy48.com/',
+      'CKG48': 'http://live.ckg48.com/',
+    }
+  
   # 录源
   def downloadVideo(self, address, quality, infor_inLive):  # 地址，品质，界面ui对象
     # 请求页面
-    url = 'http://live.' + address + '.com/Index/inlive'
+    url = self.URL[address] + 'Index/inlive'
     result = self.get(url.lower())
     # 返回flv地址
     flv = self.getVideoValue(result, quality)
